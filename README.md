@@ -153,7 +153,9 @@ The application is configured to work with [Render](https://render.com) out of t
    - Run `./build.sh` to install dependencies and build the database
    - Start the server on the correct port using the `PORT` environment variable
 
-The app automatically uses `PORT` environment variable when available (Render) or falls back to port 8000 for local development.
+The app automatically uses the `PORT` environment variable:
+- **Render**: Defaults to port 10000 (set automatically by Render)
+- **Local development**: Falls back to port 8000
 
 ## Development
 
