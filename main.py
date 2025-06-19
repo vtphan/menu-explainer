@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from src.core.config import settings
 from src.core.logging import setup_logging
-from src.api.endpoints import restaurants, search, stats
+from src.api.endpoints import restaurants, search, stats, privacy
 
 # Setup logging
 setup_logging()
@@ -16,6 +16,7 @@ app = FastAPI(
 app.include_router(restaurants.router)
 app.include_router(search.router)
 app.include_router(stats.router)
+app.include_router(privacy.router)
 
 
 @app.get("/")

@@ -1,0 +1,825 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Menu Explainer API",
+        "description": "API to browse restaurant menus with SQLite backend and cross-restaurant search",
+        "version": "2.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://menu-explainer.onrender.com"
+        }
+    ],
+    "paths": {
+        "/restaurants": {
+            "get": {
+                "tags": [
+                    "Restaurants"
+                ],
+                "summary": "Get Restaurants",
+                "description": "Return a list of all restaurant names.",
+                "operationId": "get_restaurants_restaurants_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "title": "Response Get Restaurants Restaurants Get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/restaurants/{restaurant_name}": {
+            "get": {
+                "tags": [
+                    "Restaurants"
+                ],
+                "summary": "Get Restaurant Menu",
+                "description": "Return the full menu for a specific restaurant.",
+                "operationId": "get_restaurant_menu_restaurants__restaurant_name__get",
+                "parameters": [
+                    {
+                        "name": "restaurant_name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Restaurant Name"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/restaurants/{restaurant_name}/sections": {
+            "get": {
+                "tags": [
+                    "Restaurants"
+                ],
+                "summary": "Get Restaurant Sections",
+                "description": "Return a list of all section names for a specific restaurant.",
+                "operationId": "get_restaurant_sections_restaurants__restaurant_name__sections_get",
+                "parameters": [
+                    {
+                        "name": "restaurant_name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Restaurant Name"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "title": "Response Get Restaurant Sections Restaurants  Restaurant Name  Sections Get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/restaurants/{restaurant_name}/sections/{section_name}": {
+            "get": {
+                "tags": [
+                    "Restaurants"
+                ],
+                "summary": "Get Section Items",
+                "description": "Return all items in a specific section of a restaurant.",
+                "operationId": "get_section_items_restaurants__restaurant_name__sections__section_name__get",
+                "parameters": [
+                    {
+                        "name": "restaurant_name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Restaurant Name"
+                        }
+                    },
+                    {
+                        "name": "section_name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Section Name"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/restaurants/{restaurant_name}/items": {
+            "get": {
+                "tags": [
+                    "Restaurants"
+                ],
+                "summary": "Get Restaurant Items",
+                "description": "Return all items from a restaurant with optional filtering and sorting.",
+                "operationId": "get_restaurant_items_restaurants__restaurant_name__items_get",
+                "parameters": [
+                    {
+                        "name": "restaurant_name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Restaurant Name"
+                        }
+                    },
+                    {
+                        "name": "price_gt",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter items with price greater than",
+                            "title": "Price Gt"
+                        },
+                        "description": "Filter items with price greater than"
+                    },
+                    {
+                        "name": "price_lt",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter items with price less than",
+                            "title": "Price Lt"
+                        },
+                        "description": "Filter items with price less than"
+                    },
+                    {
+                        "name": "sort_by",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/SortBy"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Sort items by name or price",
+                            "title": "Sort By"
+                        },
+                        "description": "Sort items by name or price"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/Order",
+                            "description": "Sort order",
+                            "default": "asc"
+                        },
+                        "description": "Sort order"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search/items": {
+            "get": {
+                "tags": [
+                    "Cross-Restaurant Search"
+                ],
+                "summary": "Search Items",
+                "description": "Search for menu items across all restaurants.",
+                "operationId": "search_items_search_items_get",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Search in item names and descriptions",
+                            "title": "Query"
+                        },
+                        "description": "Search in item names and descriptions"
+                    },
+                    {
+                        "name": "price_gt",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter items with price greater than",
+                            "title": "Price Gt"
+                        },
+                        "description": "Filter items with price greater than"
+                    },
+                    {
+                        "name": "price_lt",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter items with price less than",
+                            "title": "Price Lt"
+                        },
+                        "description": "Filter items with price less than"
+                    },
+                    {
+                        "name": "restaurant",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Filter by restaurant name",
+                            "title": "Restaurant"
+                        },
+                        "description": "Filter by restaurant name"
+                    },
+                    {
+                        "name": "sort_by",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/components/schemas/SortBy"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ],
+                            "description": "Sort items by name or price",
+                            "title": "Sort By"
+                        },
+                        "description": "Sort items by name or price"
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/Order",
+                            "description": "Sort order",
+                            "default": "asc"
+                        },
+                        "description": "Sort order"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "maximum": 500,
+                            "minimum": 1,
+                            "description": "Maximum number of results",
+                            "default": 100,
+                            "title": "Limit"
+                        },
+                        "description": "Maximum number of results"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/MenuItemResponse"
+                                    },
+                                    "title": "Response Search Items Search Items Get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search/by-price-range": {
+            "get": {
+                "tags": [
+                    "Cross-Restaurant Search"
+                ],
+                "summary": "Search By Price Range",
+                "description": "Find all items within a specific price range across all restaurants.",
+                "operationId": "search_by_price_range_search_by_price_range_get",
+                "parameters": [
+                    {
+                        "name": "min_price",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0,
+                            "description": "Minimum price",
+                            "title": "Min Price"
+                        },
+                        "description": "Minimum price"
+                    },
+                    {
+                        "name": "max_price",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0,
+                            "description": "Maximum price",
+                            "title": "Max Price"
+                        },
+                        "description": "Maximum price"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "maximum": 500,
+                            "minimum": 1,
+                            "description": "Maximum number of results",
+                            "default": 100,
+                            "title": "Limit"
+                        },
+                        "description": "Maximum number of results"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/MenuItemResponse"
+                                    },
+                                    "title": "Response Search By Price Range Search By Price Range Get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search/restaurants-with-item": {
+            "get": {
+                "tags": [
+                    "Cross-Restaurant Search"
+                ],
+                "summary": "Find Restaurants With Item",
+                "description": "Find all restaurants that have an item with the given name.",
+                "operationId": "find_restaurants_with_item_search_restaurants_with_item_get",
+                "parameters": [
+                    {
+                        "name": "item_name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "Item name to search for (case-insensitive)",
+                            "title": "Item Name"
+                        },
+                        "description": "Item name to search for (case-insensitive)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "title": "Response Find Restaurants With Item Search Restaurants With Item Get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/stats/restaurant/{restaurant_name}": {
+            "get": {
+                "tags": [
+                    "Statistics"
+                ],
+                "summary": "Get Restaurant Stats",
+                "description": "Get statistics about a restaurant's menu.",
+                "operationId": "get_restaurant_stats_stats_restaurant__restaurant_name__get",
+                "parameters": [
+                    {
+                        "name": "restaurant_name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Restaurant Name"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RestaurantStatsResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/privacy": {
+            "get": {
+                "tags": [
+                    "Legal"
+                ],
+                "summary": "Get Privacy Policy",
+                "description": "Return the privacy policy for the Menu Explainer API.",
+                "operationId": "get_privacy_policy_privacy_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/": {
+            "get": {
+                "summary": "Root",
+                "description": "Root endpoint with API information.",
+                "operationId": "root__get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array",
+                        "title": "Detail"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "MenuItemResponse": {
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "description": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Description"
+                    },
+                    "price": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Price"
+                    },
+                    "section": {
+                        "type": "string",
+                        "title": "Section"
+                    },
+                    "restaurant": {
+                        "type": "string",
+                        "title": "Restaurant"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name",
+                    "description",
+                    "price",
+                    "section",
+                    "restaurant"
+                ],
+                "title": "MenuItemResponse"
+            },
+            "Order": {
+                "type": "string",
+                "enum": [
+                    "asc",
+                    "desc"
+                ],
+                "title": "Order"
+            },
+            "RestaurantStatsResponse": {
+                "properties": {
+                    "restaurant": {
+                        "type": "string",
+                        "title": "Restaurant"
+                    },
+                    "total_sections": {
+                        "type": "integer",
+                        "title": "Total Sections"
+                    },
+                    "total_items": {
+                        "type": "integer",
+                        "title": "Total Items"
+                    },
+                    "items_with_price": {
+                        "type": "integer",
+                        "title": "Items With Price"
+                    },
+                    "items_without_price": {
+                        "type": "integer",
+                        "title": "Items Without Price"
+                    },
+                    "average_price": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Average Price"
+                    },
+                    "min_price": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Min Price"
+                    },
+                    "max_price": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Max Price"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "restaurant",
+                    "total_sections",
+                    "total_items",
+                    "items_with_price",
+                    "items_without_price",
+                    "average_price",
+                    "min_price",
+                    "max_price"
+                ],
+                "title": "RestaurantStatsResponse"
+            },
+            "SortBy": {
+                "type": "string",
+                "enum": [
+                    "name",
+                    "price"
+                ],
+                "title": "SortBy"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "title": "Location"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Error Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            }
+        }
+    }
+}
