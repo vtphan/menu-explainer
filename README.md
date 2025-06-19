@@ -2,6 +2,8 @@
 
 A FastAPI-based REST API with modular architecture that serves restaurant menu data from a SQLite database. The API provides endpoints to browse restaurant menus, sections, and items with filtering and sorting capabilities, plus cross-restaurant search functionality.
 
+URL: https://menu-explainer.onrender.com
+
 ## Features
 
 - **Restaurant Menu Browsing**: View menus by restaurant and section

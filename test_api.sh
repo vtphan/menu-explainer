@@ -4,7 +4,8 @@
 # Tests all API endpoints with comprehensive coverage
 
 # Configuration
-BASE_URL="http://localhost:8000"
+# BASE_URL="http://localhost:8000"
+BASE_URL="https://menu-explainer.onrender.com"
 TOTAL_TESTS=0
 PASSED_TESTS=0
 FAILED_TESTS=0
