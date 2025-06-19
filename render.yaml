@@ -1,0 +1,14 @@
+services:
+  # Web service for the FastAPI application
+  - type: web
+    name: menu-explainer-api
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./menu_data.db
+      - key: LOG_LEVEL
+        value: INFO
+      - key: DEBUG
+        value: false

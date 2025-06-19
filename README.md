@@ -139,9 +139,21 @@ cp .env.example .env
 
 Available configuration options:
 - `DATABASE_URL`: SQLite database file path
-- `HOST`/`PORT`: Server host and port
+- `HOST`/`PORT`: Server host and port (PORT is automatically set by Render in production)
 - `LOG_LEVEL`: Logging level (DEBUG, INFO, WARNING, ERROR)
 - `DEBUG`: Enable debug mode
+
+### Deployment on Render
+
+The application is configured to work with [Render](https://render.com) out of the box:
+
+1. Push your code to GitHub
+2. Connect your GitHub repo to Render
+3. Render will automatically:
+   - Run `./build.sh` to install dependencies and build the database
+   - Start the server on the correct port using the `PORT` environment variable
+
+The app automatically uses `PORT` environment variable when available (Render) or falls back to port 8000 for local development.
 
 ## Development
 
