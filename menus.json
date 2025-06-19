@@ -1,0 +1,362 @@
+{
+  "acre": {
+    "sections": [
+      {
+        "name": "SMALL PLATES",
+        "items": [
+          {
+            "name": "Caviar",
+            "description": "Cauliflower Mousseline & Scallion Pancakes *"
+          },
+          {
+            "name": "Platinum Osetra (1 oz)",
+            "price": 105
+          },
+          {
+            "name": "Baerii Sturgeon (1 oz)",
+            "price": 76
+          },
+          {
+            "name": "Mixed Green Salad",
+            "description": "Balsamic Vinaigrette (GF & Vegan)",
+            "price": 6
+          },
+          {
+            "name": "Romaine Hearts Salad",
+            "description": "Black Garlic Caesar Dressing, Bottarga, Parmigiano, & Toasted Bread Crumbs",
+            "price": 16
+          },
+          {
+            "name": "Hamachi Crudo",
+            "description": "Marinated Fennel, Citrus, & Yuzu-Fennel Oil (GF) *",
+            "price": 19
+          },
+          {
+            "name": "Roasted Tomato Soup",
+            "description": "Brioche Croutons (Veg; GF upon request)",
+            "price": 13
+          },
+          {
+            "name": "Smoked Halibut Cake",
+            "description": "Apple-Celery Root Remoulade",
+            "price": 23
+          },
+          {
+            "name": "Softshell Crab",
+            "description": "Tomatoes, Cucumbers, & Green Goddess Dressing",
+            "price": 24
+          }
+        ]
+      },
+      {
+        "name": "SIDES FOR THE TABLE (Serves 2-3)",
+        "items": [
+          {
+            "name": "Multigrain Sourdough",
+            "description": "Cultured Butter (Veg)",
+            "price": 5
+          },
+          {
+            "name": "Potato Gratin",
+            "description": "Gruyere & Leeks (GF & Veg)",
+            "price": 12
+          },
+          {
+            "name": "Roasted Carrots",
+            "description": "Avocado, Walnut, Labneh & White Truffle Honey Vinaigrette (GF & Veg)",
+            "price": 15
+          },
+          {
+            "name": "Roasted Cauliflower",
+            "description": "Cotija, Green Onions, Pico de Gallo & Guajillo (GF, Veg)",
+            "price": 14
+          },
+          {
+            "name": "Grilled Asparagus",
+            "description": "Lemon Pecorino Dressing & Pine Nuts (GF & Veg)",
+            "price": 13
+          },
+          {
+            "name": "Smoked Creamy Farro",
+            "description": "Fried Okra & Parmesan",
+            "price": 15
+          },
+          {
+            "name": "Piedmontese Gnocchi",
+            "description": "Shortrib & Smoked Potato Sauce",
+            "price": 18
+          },
+          {
+            "name": "Duck Confit Fried Black Rice",
+            "description": "(GF)",
+            "price": 16
+          }
+        ]
+      },
+      {
+        "name": "ENTRÉES",
+        "items": [
+          {
+            "name": "14 oz USDA Prime Beef NY Strip",
+            "description": "Green Peppercorn Sauce (GF) *",
+            "price": 57
+          },
+          {
+            "name": "24 oz USDA Prime Cowboy Ribeye",
+            "description": "Tamarind Steak Sauce (GF) *",
+            "price": 70
+          },
+          {
+            "name": "Whole Crispy Bronzino",
+            "description": "Chile-Ponzu Sauce (GF)",
+            "price": 59
+          },
+          {
+            "name": "12 oz American Iberian Pork Coppa",
+            "description": "Smoked Plantain & Spicy Peanut Chile Sauce (GF)",
+            "price": 31
+          },
+          {
+            "name": "20 oz Bone in Veal “Crepinette”",
+            "description": "Soy-Shiitake Sauce",
+            "price": 52
+          }
+        ]
+      },
+      {
+        "name": "SEASONAL ENTRÉES",
+        "items": [
+          {
+            "name": "Crispy Wild Skate",
+            "description": "Potato Puree, Green Beans, & Lemon Brown Butter",
+            "price": 39
+          },
+          {
+            "name": "Duo of Lamb",
+            "description": "Roasted Loin, Lamb Shoulder Presse, Parsnip, Baby Artichoke, & Lamb Jus (GF)",
+            "price": 58
+          },
+          {
+            "name": "Wild Mushroom & Basil-Pasta Rotolo",
+            "description": "Taleggio Cheese, Asparagus, & Peas (Veg)",
+            "price": 34
+          }
+        ]
+      },
+      {
+        "name": "SWEET",
+        "items": [
+          {
+            "name": "Sticky Toffee Date Cake",
+            "description": "Vanilla Ice Cream (Veg)",
+            "price": 10
+          },
+          {
+            "name": "Vanilla Bean Crème Brûlée",
+            "description": "Berries & Thumbprint Cookie (Veg; GF without the cookie)",
+            "price": 11
+          },
+          {
+            "name": "Chocolate Panna Cotta",
+            "description": "Hazelnut & Walnut Crumble, Coconut Sauce, & Cherries (GF)",
+            "price": 11
+          },
+          {
+            "name": "Gooey Pistachio Cake",
+            "description": "Chantilly Cream (Veg)",
+            "price": 11
+          }
+        ]
+      }
+    ],
+    "dietary_labels": {
+      "Veg": "Vegetarian",
+      "GF": "Gluten Free"
+    }
+  },
+  "bao_toan_kitchen_and_bar.": {
+    "restaurant": "Bao Toan Kitchen & Bar",
+    "location": "Memphis, TN",
+    "sections": [
+      {
+        "name": "ăn chơi",
+        "items": [
+          {
+            "name": "Chả Giò",
+            "description": "pork, wood ear mushrooms, taro (ask vg, gf)",
+            "price": 12
+          },
+          {
+            "name": "Gỏi Cuốn",
+            "description": "shrimp, pork, carrot, daikon, cucumbers, peanut sauce, fresh herbs (ask vg, gf)",
+            "price": 12
+          },
+          {
+            "name": "Banh Cuốn",
+            "description": "house made rice noodles, pork, mushrooms, crispy onions, fresh herbs (ask vg, gf)",
+            "price": 16
+          },
+          {
+            "name": "Bao Bao Shrimp",
+            "description": "deep fried and colossal with shells, garlic pepper sauce",
+            "price": 22
+          },
+          {
+            "name": "Fish Sauce Wings",
+            "description": "sweet fish sauce glaze, chili, scallions",
+            "price": 14
+          },
+          {
+            "name": "Bò Tái Chanh",
+            "description": "fillet, crispy shallot, pho spices, lime (gf)",
+            "price": 23
+          },
+          {
+            "name": "Temple Tofu",
+            "description": "wok fried with lemongrass (vg, gf)",
+            "price": 16
+          }
+        ]
+      },
+      {
+        "name": "súp",
+        "items": [
+          {
+            "name": "Canh Bí Đỏ",
+            "description": "kabocha squash, minced pork and shrimp, pork bone broth (ask vg, gf)",
+            "price": 9
+          },
+          {
+            "name": "Súp Nấm",
+            "description": "wild mushrooms, seaweed, vegetable broth (vg)",
+            "price": 9
+          }
+        ]
+      },
+      {
+        "name": "xà lách",
+        "items": [
+          {
+            "name": "Banana Blossom",
+            "description": "banana blossoms, onions, carrots, sweet peppers, lime mint vinaigrette (vg, gf)",
+            "price": 14
+          },
+          {
+            "name": "Palm",
+            "description": "palm, lotus stem, grapefruit, carrots, cucumbers, mint, tamarind vinaigrette (vg, gf)",
+            "price": 14
+          },
+          {
+            "name": "House",
+            "description": "watercress, mixed greens, red onion, tofu, chicken, pork, or shrimp with vinaigrette (vg, gf)",
+            "price": 14
+          }
+        ]
+      },
+      {
+        "name": "đặc biệt",
+        "items": [
+          {
+            "name": "Bao Toan Fried Rice - Crab",
+            "description": "crab meat, XO sauce, egg, vegetables (gf)",
+            "price": 38
+          },
+          {
+            "name": "Bao Toan Fried Rice - Vegetable",
+            "description": "mushrooms, tofu, vegetables (vg, gf)",
+            "price": 22
+          },
+          {
+            "name": "Cà Ri Sài Gòn",
+            "description": "carrot, sweet potato, taro, chicken/tofu, white rice or baguette (ask vg, gf)",
+            "price": 24
+          },
+          {
+            "name": "Bún Chả Hà Nội",
+            "description": "lemongrass grilled pork and patty, rice noodle, charred pork broth, bib lettuce (gf)",
+            "price": 20
+          },
+          {
+            "name": "Cá Chả Thăng Long",
+            "description": "sizzling turmeric and dill marinated fish, noodles, herbs (gf)",
+            "price": 28
+          },
+          {
+            "name": "Cá Chiên",
+            "description": "seasonal whole fried white fish with ginger, lemongrass chua me, pickled onions, fresh herbs",
+            "price": "MKT"
+          },
+          {
+            "name": "Bò Lúc Lắc",
+            "description": "marinated filet mignon, truffle fries, watercress salad (ask gf)",
+            "price": 32
+          },
+          {
+            "name": "BT Platter for Two",
+            "description": "bò lá lốt, grilled pork, fresh herbs, bib lettuce, rice paper wraps (vg, gf)",
+            "price": 48
+          }
+        ]
+      },
+      {
+        "name": "cơm mẹ nấu",
+        "items": [
+          {
+            "name": "Kho Quẹt",
+            "description": "pork belly, caramelized fish sauce, vegetables, dipping sauce (gf)",
+            "price": 20
+          },
+          {
+            "name": "Thịt Kho",
+            "description": "10-hour braised pork, quail eggs, house made pickles, rice (gf)",
+            "price": 23
+          },
+          {
+            "name": "Ma’s Ribs",
+            "description": "lemongrass, oyster sauce, garlic (gf)",
+            "price": 18
+          },
+          {
+            "name": "Bánh Xèo",
+            "description": "crispy turmeric crêpe, shrimp, pork, sprouts, fresh herbs, nuoc cham (ask vg, gf)",
+            "price": 14
+          },
+          {
+            "name": "Rau Xào",
+            "description": "wok sauteed seasonal vegetable (gf)",
+            "price": 16
+          }
+        ]
+      },
+      {
+        "name": "ăn thêm",
+        "items": [
+          {
+            "name": "fresh rice noodles",
+            "description": "(vg, gf)",
+            "price": 4
+          },
+          {
+            "name": "coconut sticky rice",
+            "description": "(vg, gf)",
+            "price": 4
+          },
+          {
+            "name": "jasmine rice",
+            "description": "(vg, gf)",
+            "price": 2
+          },
+          {
+            "name": "house made baguette & butter",
+            "description": "",
+            "price": 4
+          }
+        ]
+      }
+    ],
+    "dietary_labels": {
+      "vg": "vegan",
+      "gf": "gluten-free"
+    }
+  }
+}
